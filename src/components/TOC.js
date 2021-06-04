@@ -2,6 +2,10 @@ import {Component} from 'react';
 
 
 class TOC extends Component{
+    shouldComponentUpdate(newProps, newState){
+        if(this.props.data === newProps.data) return false
+        return true
+    }
 render(){
     let data = this.props.data
     let lists = []
